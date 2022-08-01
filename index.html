@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instafeed.js - a simple Instagram javascript plugin</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Instafeed.js is a simple way to display your Instagram photos on your website.">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    #instafeed img{
+      width: 150px;
+      height: 150px;	
+      margin: 5px;
+      object-fit: cover;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id="instafeed"></div>
+
+<script src="instafeed.min.js"></script>
+<script type="text/javascript">
+  var feed = new Instafeed({
+    limit : 5,
+    accessToken : 'access_token',
+    templete : '<div class="gallery-item"><a href="{{link}}"><img title="{{model.caption}}" src="{{image}}" /></a></div>'
+  });
+  feed.run();
+</script>
+
+</body>
+</html>
